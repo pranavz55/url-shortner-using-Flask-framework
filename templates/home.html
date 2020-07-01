@@ -8,21 +8,22 @@
     <meta charset="UTF-8">
     <title>url-shortener</title>
 </head>
-<body>
-<h1>URL Shortener </h1>
+<center>
+<center><h1>URL Shortener </h1></center>
 
 
 
-<form action="your-url" method="POST">
-    <label for="url">Website Name</label>
+<h2><center><form action="your-url" method="POST">
+    <label for="url"><code>Website Name</code></label>
     <input type="url" name="url" value="" required><br>
-    <label for="code">Shorten code</label>
-    <input type="text" name="code" value="" required><br>
+    <label for="code"><code>Shorten code</code></label>
+    <input type="text" name="code" value="" required><br><br>
     <input type="submit" value="shortner">
 </form>
 
+</h2>
 {%if codes %}
-<h2>Codes that you have created-</h2>
+<h2><code>You have created following shortened codes for url's:</code></h2>
 <ul>
     {%for code in codes %}
     <a href="{{ url_for('redirect_to_url',code=code) }}">
@@ -31,6 +32,7 @@
     {% endfor %}
 </ul>
 {% endif %}
+</center>
 </body>
 </html>
 
